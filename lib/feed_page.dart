@@ -85,8 +85,8 @@ class FeedPage extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
+            const Padding(
+              padding: EdgeInsets.all(4.0),
               child: Text(
                 '「いいね！」100,000件',
                 style: TextStyle(
@@ -95,8 +95,8 @@ class FeedPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 'Flutter, Google UI toolkit, enables efficient cross-platform app development with its rapid hot reload, versatile widget architecture, and seamless integration across mobile, web, and desktop. Supported by Dart, Flutter offers an enjoyable coding experience and visually appealing designs, backed by a vibrant community and major platform support.',
                 style: TextStyle(
