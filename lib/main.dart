@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'feed_page.dart';
 import 'my_page.dart';
 
+//アプリ起動
 void main() {
   runApp(const MyApp());
 }
 
+//Material3を採用
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//MyHomePageでUIのベースを作る
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -32,7 +34,9 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+//アプリ起動時、フィードが開くように設定
 class _MyHomePageState extends State<MyHomePage> {
+  //アプリ起動時、フィードが開くように定義
   int _currentIndex = 0;
   final _pageWidgets = [
     FeedPage(),
@@ -42,7 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //PageWidgetsのリストから、_currentIndex番目のPageを呼ぶ
       body: _pageWidgets.elementAt(_currentIndex),
+      //ナビゲーションを作成
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'フィード'),
@@ -54,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+//onTapの時、_currentIndexのPageを更新する
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
