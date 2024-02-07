@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//マイページを作成,画像アドレスをimagesに
 class MyPage extends StatelessWidget {
   MyPage({Key? key}) : super(key: key);
   final images = [
@@ -17,6 +18,7 @@ class MyPage extends StatelessWidget {
     'https://images.unsplash.com/photo-1617529497471-9218633199c0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbXxlbnwwfHwwfHx8MA%3D%3D',
   ];
 
+//マイページUIを作成
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +31,7 @@ class MyPage extends StatelessWidget {
             children: [
               Row(
                 children: [
+                  //instagramアイコンの画像アドレス
                   Image.network(
                     'https://appliv-domestic.akamaized.net/v1/600x/r/articles/129815/13877626_1604328764_041813000_0_1500_1500.jpeg',
                     width: 60,
@@ -158,14 +161,16 @@ class MyPage extends StatelessWidget {
                   )
                 ],
               ),
-              //shrinkWrap: true` : GridViewを親Widgetのサイズに合わせます。
-              //`physics: NeverScrollableScrollPhysics()` : GridViewが独自にスクロールしないようにします。（今回のコードでは、GridViewはSingleChildScrollViewの中にあるため、全体が一緒にスクロールします。）
-              //`crossAxisCount: 3` : 横方向に3つの要素を表示します。
+              //メモ
+              //shrinkWrap: true` : GridViewを親Widgetのサイズに合わせる。
+              //`physics: NeverScrollableScrollPhysics()` : GridViewが独自にスクロールしないようにする。
+              //`crossAxisCount: 3` : 横方向に3つの要素を表示する。
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 3,
                 children: images.map((imageUrl) {
+                  //InstagramPostItemを185行目に抽出
                   return InstagramPostItem(imageUrl: imageUrl);
                 }).toList(),
               ),
@@ -177,6 +182,7 @@ class MyPage extends StatelessWidget {
   }
 }
 
+//InstagramPostItemの中身を定義
 class InstagramPostItem extends StatelessWidget {
   InstagramPostItem({Key? key, required this.imageUrl}) : super(key: key);
   final String imageUrl;

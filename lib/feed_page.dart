@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+//FeedPageを作成、画像アドレスをimagesに
 class FeedPage extends StatelessWidget {
   FeedPage({Key? key}) : super(key: key);
   final images = [
     'https://plus.unsplash.com/premium_photo-1673984261110-d1d931e062c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZ3JhbXxlbnwwfHwwfHx8MA%3D%3D',
   ];
 
+//フィードUIを作成
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +20,7 @@ class FeedPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
+                  //instagramアイコンの画像アドレス
                   Image.network(
                     'https://appliv-domestic.akamaized.net/v1/600x/r/articles/129815/13877626_1604328764_041813000_0_1500_1500.jpeg',
                     width: 40,
@@ -51,11 +54,10 @@ class FeedPage extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 1,
               children: images.map((imageUrl) {
+                //InstagramPostItemを126行目に抽出
                 return InstagramPostItem(imageUrl: imageUrl);
               }).toList(),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
             Row(
               children: [
                 IconButton(
@@ -75,6 +77,16 @@ class FeedPage extends StatelessWidget {
                     Icons.send,
                   ),
                   onPressed: () {},
+                ),
+                Padding(
+                  //画面中央にフィードに似せたアイコンを追加
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.more_horiz,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
                 const Spacer(),
                 IconButton(
@@ -111,6 +123,7 @@ class FeedPage extends StatelessWidget {
   }
 }
 
+//InstagramPostItemの中身を定義
 class InstagramPostItem extends StatelessWidget {
   InstagramPostItem({Key? key, required this.imageUrl}) : super(key: key);
   final String imageUrl;
