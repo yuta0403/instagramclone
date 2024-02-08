@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "instagramclone",
     "short_name": "instagramclone",
+=======
+    "name": "todo",
+    "short_name": "todo",
+>>>>>>> e900b62 (first commit)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
