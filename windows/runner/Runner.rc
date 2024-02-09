@@ -90,21 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-<<<<<<< HEAD
             VALUE "FileDescription", "instagramclone" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "instagramclone" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "instagramclone.exe" "\0"
             VALUE "ProductName", "instagramclone" "\0"
-=======
-            VALUE "FileDescription", "todo" "\0"
-            VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "todo" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "todo.exe" "\0"
-            VALUE "ProductName", "todo" "\0"
->>>>>>> e900b62 (first commit)
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
